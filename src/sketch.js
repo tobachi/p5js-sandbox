@@ -1,9 +1,11 @@
+import * as d3 from 'd3'
+
 let img
+let canvasElement = {}
 
 function setup() {
   createCanvas(windowWidth, windowHeight)
   img = loadImage("./src/img/Love_Heart_SVG.svg")
-  // img = loadImage("./src/img/icon.jpg")
 }
 
 function draw() {
@@ -24,6 +26,8 @@ function draw() {
 
   // 画像を配置する
   drawImage(width/2, height/2, 10)
+
+  
 }
 
 function drawHeart(ox, oy, size) {
@@ -50,6 +54,14 @@ function drawImage(ox, oy, size) {
     x = size * (16 * sin(radians(theta)) * sin(radians(theta)) * sin(radians(theta)))
     y = (-1) * size * (13 * cos(radians(theta)) - 5 * cos(radians(2 * theta))
       - 2 * cos(radians(3 * theta)) - cos(radians(4 * theta)))
+
+    let key = 'elm' + theta
+    canvasElement.push({
+      [key]: {
+        left: x - 15,
+        top: y - 15,
+        href: '#'
+      }})
 
     image(img, x-15, y-15, 30, 30)
   }
