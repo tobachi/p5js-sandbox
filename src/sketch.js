@@ -1,4 +1,4 @@
-import * as d3 from 'd3'
+// import * as d3 from 'd3'
 
 let img
 let canvasElement = {}
@@ -18,16 +18,14 @@ function draw() {
   // line(0, height/2, width, height/2)
 
   // ハート
-  noFill()
-  strokeWeight(3)
-  stroke(200, 200, 200)
-  strokeJoin(ROUND) //線のつなぎ目について設定
+  // noFill()
+  // strokeWeight(3)
+  // stroke(200, 200, 200)
+  // strokeJoin(ROUND) //線のつなぎ目について設定
   // drawHeart(width/2, height/2, 10)  // 横の位置、縦の位置、大きさ調整用変数
 
   // 画像を配置する
   drawImage(width/2, height/2, 10)
-
-  
 }
 
 function drawHeart(ox, oy, size) {
